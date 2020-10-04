@@ -1,0 +1,5 @@
+<h1>The shorten url is </h1>
+<%= link_to request.base_url + "/" + @url.short_url, shorten_url_path(@url.short_url) %>
+
+<h1>the no of visits </h1>
+<h2><%= @url.number_of_visits %>
