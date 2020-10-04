@@ -5,9 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: Brooklyn
-  user: dev_user
-  password: passw0rd2020 
+  encoding: UTF-8
+  database: brooklyn
+  host: localhost
+  username: dev_user
+  password: passw0rd2020
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,4 +19,3 @@ test:
   database: test_database
   user: test_user
   password: passowrd
-
