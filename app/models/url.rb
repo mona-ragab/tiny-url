@@ -4,7 +4,7 @@ class Url < ApplicationRecord
   before_save :generate_short_url
 
   def generate_short_url
-    self.short_url = SecureRandom.uuid[0..7] if short_url.nil? || short_url.empty?
+    self.short_url = SecureRandom.uuid[0..4] if short_url.nil? || short_url.empty?
     true
   end
 end

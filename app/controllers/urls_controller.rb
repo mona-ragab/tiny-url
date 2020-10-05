@@ -24,7 +24,6 @@ class UrlsController < ApplicationController
 
   def url_info
     @url = Url.find_by(short_url: params[:token])
-    # render 'url_info.html.erb'
   end
 
   def url_params
