@@ -1,5 +1,8 @@
-<h1>The shorten url is </h1>
-<%= link_to request.base_url + "/" + @url.short_url, shorten_url_path(@url.short_url) %>
-
-<h1>the no of visits </h1>
-<h2><%= @url.number_of_visits %>
+<div class="jumbotron">
+  <div class="container">
+    <h2 class="display-3">New URL!</h2>
+    <h2><%= link_to request.base_url + "/" + @url.short_url, shorten_url_path(@url.short_url) %></h2>
+    <h2>Number of visits: <%= @url.number_of_visits %> </h2>
+  </div>
+  <div class="col-md-4"><%= link_to "Home Page", root_path, class: 'btn btn-primary btn-lg' %> </div>
+</div>

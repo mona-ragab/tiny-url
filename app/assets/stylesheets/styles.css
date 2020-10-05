@@ -1,0 +1,10 @@
+body {
+    padding-top: 5rem;
+}
+.tiny-url-container {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.error-alert{
+    color:red;
+}
