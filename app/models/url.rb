@@ -18,10 +18,6 @@ class Url < ApplicationRecord
   end
 
   def generate_short_url
-    if self.suffix
-      self.short_url = SecureRandom.uuid[0..4]<< '/' << self.suffix 
-    else
     self.short_url = SecureRandom.uuid[0..4] 
-    end
   end
 end

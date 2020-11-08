@@ -10,7 +10,7 @@ class UrlsController < ApplicationController
     @url = Url.find_or_create_by(url_params)
     @url.ip_address = request.remote_ip
     if @url.save
-      redirect_to url_info_path(@url.short_url)
+      redirect_to url_info_path(@url.short_url, @url.suffix)
     else
       flash[:errors] = @url.errors.messages.values.flatten
       render 'new'
@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
   end
 
   def shorten_url
-    @url = Url.find_by(short_url: params[:short_url])
+    @url = Url.find_by(short_url: params[:token])
     render 'not_found.html.erb' if @url.nil?
     @url&.update_attributes(number_of_visits: @url.number_of_visits + 1)
     redirect_to @url.long_url if @url

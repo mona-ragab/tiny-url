@@ -2,7 +2,7 @@
     <div class="container">
         <h2 class="display-3">New URL!</h2>
 
-        <h2 id="link"><%= link_to request.base_url + "/" + @url.short_url, shorten_url_path(@url.short_url), target: :blank %></h2>
+        <h2 id="link"><%= link_to request.base_url + "/" + @url.short_url  + "/" + @url.suffix, shorten_url_path(@url.short_url), target: :blank %></h2>
 
         <button class="btn btn-info btn-copy " data-clipboard-target="#link">
             Copy to clipboard
