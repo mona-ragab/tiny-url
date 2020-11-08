@@ -3,15 +3,14 @@
 <div class="form-group ">
     <%= f.label :long_url, 'Long URL', class: "col-md-4"  %>
     <%= f.text_field (:long_url), class: '', required: true, autofocus: true %>
-    <% if @url.errors.messages[:long_url] %>
-    <% @url.errors.messages[:long_url].each do |value| %>
-    <div class="form-text error-alert "><%= value %> </div>
-    <% end %>
+      <% if @url.errors.messages[:long_url] %>
+        <% @url.errors.messages[:long_url].each do |value| %>
+        <div class="form-text error-alert "><%= value %> </div>
+      <% end %>
     <% end %>
 </div>
 <div class="form-group ">
-    <%= f.label :suffix, class: "col-md-4"%>
-    <%= f.text_field (:suffix), class: '' %>
+
 </div>
 <button class="btn btn-lg btn-primary " type="submit">Submit</button>
 
