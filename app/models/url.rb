@@ -6,7 +6,7 @@ class Url < ApplicationRecord
 
 
   def check_suffix
-   self.suffix =  self.suffix.gsub(" ","")
+   self.suffix =  self.suffix.gsub(" ","") if self.suffix
    true
   end
   
