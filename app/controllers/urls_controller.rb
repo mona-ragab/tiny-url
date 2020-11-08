@@ -1,3 +1,4 @@
+
 class UrlsController < ApplicationController
 
   def new
@@ -16,7 +17,7 @@ class UrlsController < ApplicationController
   end
 
   def shorten_url
-    @url = Url.find_by(short_url: params[:token])
+    @url = Url.find_by(short_url: params[:short_url])
     render 'not_found.html.erb' if @url.nil?
     @url&.update_attributes(number_of_visits: @url.number_of_visits + 1)
     redirect_to @url.long_url if @url
@@ -27,7 +28,7 @@ class UrlsController < ApplicationController
   end
 
   def url_params
-    params.require(:url).permit(:long_url, :short_url, :number_of_visit, :ip_address)
+    params.require(:url).permit(:long_url, :short_url, :number_of_visit, :ip_address, :suffix)
   end
 
 end
