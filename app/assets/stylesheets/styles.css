@@ -9,12 +9,13 @@ body {
   color: red;
 }
 
-.register-button {
-  float: left;
-  padding: 10rem;
-  margin: 50px;
-}
 .alert-info {
   width: 50%;
   margin: 100px;
+}
+
+.user_nav{
+  position: relative;
+  float: left;
+  margin: 20px;
 }

@@ -17,8 +17,19 @@
 
 
     <main role="main">
+
         <div class="alert-info"> <%= flash[:alert]  %> </div>
         <div class="alert-notice"><%= flash[:notice] %> </div>
+
+
+        <div class="user_nav">
+            <% if user_signed_in? %>
+                Signed in as <%= current_user.email %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "alert alert-danger" %>
+            <% else %>
+                <%= link_to 'Register', new_user_registration_path, class:"btn btn-primary" %> or <%= link_to 'Sign in', new_user_session_path, class:"btn btn-primary" %>
+            <% end %>
+        </div>
 
         <div class="tiny-url-container">
             <%= yield %>
