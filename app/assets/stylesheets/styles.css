@@ -1,10 +1,20 @@
 body {
-    padding-top: 5rem;
+  padding-top: 5rem;
 }
 .tiny-url-container {
-    padding: 3rem 1.5rem;
-    text-align: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
 }
-.error-alert{
-    color:red;
+.error-alert {
+  color: red;
+}
+
+.register-button {
+  float: left;
+  padding: 10rem;
+  margin: 50px;
+}
+.alert-info {
+  width: 50%;
+  margin: 100px;
 }

@@ -1,12 +1,16 @@
+<%= link_to 'Log In', new_user_session_path, :class => 'btn btn-primary register-button '%>
+<%= link_to 'Register', new_user_registration_path, :class => 'btn btn-primary register-button '%>
+
+
 <%= form_for @url, html: {class: 'form'} do |f| %>
 <img class="mb-4" src="/images/tiny_url.png" alt="">
 <div class="form-group ">
-    <%= f.label :long_url, 'Long URL', class: "col-md-4"  %>
+    <%= f.label :long_url, 'URL', class: "col-md-4"  %>
     <%= f.text_field (:long_url), class: '', required: true, autofocus: true %>
-      <% if @url.errors.messages[:long_url] %>
-        <% @url.errors.messages[:long_url].each do |value| %>
-        <div class="form-text error-alert "><%= value %> </div>
-      <% end %>
+    <% if @url.errors.messages[:long_url] %>
+    <% @url.errors.messages[:long_url].each do |value| %>
+    <div class="form-text error-alert "><%= value %> </div>
+    <% end %>
     <% end %>
 </div>
 <div class="form-group ">

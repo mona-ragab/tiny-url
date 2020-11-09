@@ -1,6 +1,6 @@
 
 class UrlsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create, :url_info]
   protect_from_forgery prepend: true
   def new
     @url = Url.new

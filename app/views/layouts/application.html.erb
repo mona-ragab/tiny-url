@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>TinyUrl</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <title>TinyUrl</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
 
 
-<main role="main" class="container">
+    <main role="main">
+        <div class="alert-info"> <%= flash[:alert]  %> </div>
+        <div class="alert-notice"><%= flash[:notice] %> </div>
 
-  <div class="tiny-url-container">
-    <%= yield %>
-  </div>
+        <div class="tiny-url-container">
+            <%= yield %>
+        </div>
 
-</main><!-- /.container -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-<script>
-var clipboard = new ClipboardJS('.btn-copy');
-clipboard.on('success', function () { $('.btn-copy').text('Copied!'); })
-</script>
+    </main><!-- /.container -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS('.btn-copy');
+        clipboard.on('success', function() {
+            $('.btn-copy').text('Copied!');
+        })
+    </script>
 
 </body>
+
 </html>
