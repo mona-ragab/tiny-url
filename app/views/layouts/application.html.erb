@@ -2,47 +2,52 @@
 <html>
 
 <head>
-    <title>TinyUrl</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>TinyUrl</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <%= stylesheet_link_tag "style" %>
+
 </head>
 
 <body>
 
+  <nav class="navbar navbar-dark bg-dark ">
 
-    <main role="main">
+    <div class="container user-nav">
+      <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "alert alert-danger" %>
+      <% else %>
+      <%= link_to 'Register', new_user_registration_path, class:"btn btn-primary register" %> <%= link_to 'Sign in', new_user_session_path, class:"btn btn-primary sign-in" %>
+      <% end %>
+    </div>
+  </nav>
+  <div class="alert-info"> <%= flash[:alert]  %> </div>
 
-        <div class="alert-info"> <%= flash[:alert]  %> </div>
-        <div class="alert-notice"><%= flash[:notice] %> </div>
+  <main role="main">
 
 
-        <div class="user_nav">
-            <% if user_signed_in? %>
-                Signed in as <%= current_user.email %>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "alert alert-danger" %>
-            <% else %>
-                <%= link_to 'Register', new_user_registration_path, class:"btn btn-primary" %> or <%= link_to 'Sign in', new_user_session_path, class:"btn btn-primary" %>
-            <% end %>
-        </div>
 
-        <div class="tiny-url-container">
-            <%= yield %>
-        </div>
 
-    </main><!-- /.container -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <script>
-        var clipboard = new ClipboardJS('.btn-copy');
-        clipboard.on('success', function() {
-            $('.btn-copy').text('Copied!');
-        })
-    </script>
+
+    <div>
+      <%= yield %>
+    </div>
+
+  </main><!-- /.container -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script>
+    var clipboard = new ClipboardJS('.btn-copy');
+    clipboard.on('success', function() {
+      $('.btn-copy').text('Copied!');
+    })
+  </script>
 
 </body>
 

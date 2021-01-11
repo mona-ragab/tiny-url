@@ -1,19 +1,21 @@
-
-<%= form_for @url, html: {class: 'form'} do |f| %>
-<img class="mb-4" src="/images/tiny_url.png" alt="">
-<div class="form-group ">
+<div class="container col-6">
+  <%= form_for @url, html: {class: 'form'} do |f| %>
+  <img class="mb-4" src="/images/tiny_url.png" alt="">
+  <div class="form-group ">
     <%= f.label :long_url, 'URL', class: "col-md-4"  %>
-    <%= f.text_field (:long_url), required: true, autofocus: true %>
+    <%= f.text_field (:long_url), required: true, autofocus: true, class:"form-control"%>
     <% if @url.errors.messages[:long_url] %>
     <% @url.errors.messages[:long_url].each do |value| %>
     <div class="form-text error-alert "><%= value %> </div>
     <% end %>
     <% end %>
-</div>
-<div class="form-group ">
+  </div>
+  <div class="form-group ">
     <%= f.label :suffix, class: "col-md-4"%>
-    <%= f.text_field (:suffix) %>
+    <%= f.text_field (:suffix), class:"form-control" %>
+  </div>
+  <div class="form-group ">
+    <button class="btn btn-lg btn-primary submit-btn" type="submit">Submit</button>
+  </div>
+  <% end %>
 </div>
-<button class="btn btn-lg btn-primary " type="submit">Submit</button>
-
-<% end %>

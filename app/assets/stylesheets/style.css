@@ -1,0 +1,73 @@
+/* 
+.tiny-url-container {
+  padding: 3rem 1.5rem;
+  text-align: center;
+} */
+.error-alert {
+  color: red;
+}
+
+.alert-info {
+  width: 50%;
+  margin: 50px;
+  background-color: red;
+}
+
+.user-nav {
+  position: relative;
+  right: 20px;
+  width: fit-content;
+  margin-right: 20px;
+}
+
+.url,
+.suffix {
+  position: absolute;
+  margin-left: 200px;
+}
+
+.sign-in,
+.register {
+  margin: 5px;
+}
+
+.submit-btn {
+  position: absolute;
+  right: 45%;
+  margin-top: 1rem;
+}
+.new-user {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+h2 {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  color: #007bff;
+}
+.log-out,
+.login-link {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+}
+
+.error-msg {
+  color: red;
+}
+
+.note-error {
+  display: none;
+}
+.sign-up-link {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+}
+.forget-pass-link {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+}
