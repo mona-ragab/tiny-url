@@ -18,7 +18,9 @@
 <body>
 
   <nav class="navbar navbar-dark bg-dark ">
-
+    <%= link_to root_path do %>
+      <img class="" src="/images/tiny_url.png" alt="" width="40" height="40">
+    <% end %>
     <div class="container user-nav">
       <% if user_signed_in? %>
       Signed in as <%= current_user.email %>
@@ -27,6 +29,7 @@
       <%= link_to 'Register', new_user_registration_path, class:"btn btn-primary register" %> <%= link_to 'Sign in', new_user_session_path, class:"btn btn-primary sign-in" %>
       <% end %>
     </div>
+
   </nav>
   <div class="alert-info"> <%= flash[:alert]  %> </div>
 
